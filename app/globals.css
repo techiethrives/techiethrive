@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+:root {
+  /* Base colors */
+  --background: #ffffff;
+  --foreground: #171717;
+  
+  /* Primary colors (dark green to black gradient) */
+  --primary-dark: #002b27;
+  --primary-black: #000000;
+  --primary: #002b27; /* Main primary color */
+  
+  /* Secondary colors (golden palette) */
+  --secondary-darkest: #3d2a0e;
+  --secondary-dark: #8a660e;
+  --secondary: #b98025; /* Main secondary color */
+  --secondary-light: #afb743;
+  --secondary-lightest: #f7df78;
+  
+  /* Accent colors (white to cream gradient) */
+  --accent-light: #ffffff;
+  --accent: #fcfdc8; /* Main accent color */
+  
+  /* Semantic color assignments - CHANGE THESE TO CONTROL YOUR THEME */
+  --color-header-bg: var(--primary-dark);
+  --color-header-text: var(--accent-light);
+  
+  --color-button-primary-bg: var(--secondary);
+  --color-button-primary-text: var(--accent-light);
+  --color-button-primary-hover: var(--secondary-dark);
+  
+  --color-button-secondary-bg: var(--primary-dark);
+  --color-button-secondary-text: var(--accent-light);
+  --color-button-secondary-hover: var(--primary-black);
+  
+  --color-link: var(--secondary);
+  --color-link-hover: var(--secondary-dark);
+  
+  --color-card-bg: var(--background);
+  --color-card-border: var(--secondary-light);
+  --color-card-shadow: rgba(0, 43, 39, 0.1);
+  
+  --color-text-primary: var(--foreground);
+  --color-text-secondary: var(--secondary-dark);
+  --color-text-muted: #666666;
+  
+  --color-border: var(--secondary-light);
+  --color-divider: var(--secondary-lightest);
+  
+  --color-success: #10b981;
+  --color-error: #ef4444;
+  --color-warning: var(--secondary-lightest);
+  --color-info: var(--primary-dark);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary-dark: var(--primary-dark);
+  --color-primary-black: var(--primary-black);
+  --color-secondary-darkest: var(--secondary-darkest);
+  --color-secondary-dark: var(--secondary-dark);
+  --color-secondary: var(--secondary);
+  --color-secondary-light: var(--secondary-light);
+  --color-secondary-lightest: var(--secondary-lightest);
+  --color-accent-light: var(--accent-light);
+  --color-accent: var(--accent);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --color-card-bg: #1a1a1a;
+    --color-text-muted: #999999;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Utility classes for easy color application */
+.bg-primary {
+  background-color: var(--color-button-primary-bg);
+}
+
+.bg-secondary {
+  background-color: var(--color-button-secondary-bg);
+}
+
+.text-primary {
+  color: var(--color-text-primary);
+}
+
+.text-secondary {
+  color: var(--color-text-secondary);
+}
+
+.border-primary {
+  border-color: var(--color-border);
+}
