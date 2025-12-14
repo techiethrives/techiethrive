@@ -25,7 +25,7 @@ const contractPlans = [
   {
     name: '1-Month Contract',
     duration: '31 Days',
-    price: '₹18,000',
+    price: '₹17,999',
     popular: false,
     features: [
       'Daily content posting (Posts, Reels, Stories)',
@@ -42,7 +42,7 @@ const contractPlans = [
   {
     name: '3-Month Contract',
     duration: '90 Days',
-    price: '₹40,000',
+    price: '₹39,999',
     savings: 'Save ₹14,000',
     popular: true,
     features: [
@@ -259,7 +259,7 @@ export default function InstagramManagementPage() {
                     ))}
                   </ul>
 
-                  <Link href="/book-service">
+                  <Link href="/services-book">
                     <button className="w-full px-6 py-3 rounded-lg font-semibold hover:scale-105 transition-transform" style={{
                       background: 'linear-gradient(to right, var(--secondary), var(--primary-dark))',
                       boxShadow: '0 10px 25px -5px rgba(185, 128, 37, 0.3)'
