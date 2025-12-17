@@ -4,10 +4,14 @@ import { motion } from 'framer-motion'
 import { ArrowRight, Code2, Palette, Rocket, Sparkles } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+import Scene3D from '@/components/Scene3D'
+import ParticleBackground from '@/components/ParticleBackground' // Add this import
 
 export default function Home() {
   return (
     <main className="min-h-screen text-white overflow-hidden" style={{ background: 'var(--primary-black)' }}>
+      {/* Add 3D Background */}
+      <Scene3D />
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-6">
         {/* Animated gradient background */}
