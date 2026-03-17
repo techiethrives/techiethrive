@@ -12,7 +12,7 @@ import {
   Twitter,
   Instagram,
   Linkedin,
-  Github,
+  Facebook,
 } from 'lucide-react'
 
 const contactInfo = [
@@ -50,7 +50,7 @@ const socialLinks = [
   { icon: Instagram, href: 'https://www.instagram.com/techiethrives/#', label: 'Instagram', hoverColor: 'var(--secondary)' },
   { icon: Twitter, href: 'https://x.com/Techie_Thrives', label: 'Twitter', hoverColor: 'var(--secondary-light)' },
   { icon: Linkedin, href: 'https://linkedin.com/in/techie-thrives-digital-creation-agency-332661399 ', label: 'LinkedIn', hoverColor: 'var(--secondary-lightest)' },
-  { icon: Github, href: 'https://github.com/techiethrives', label: 'GitHub', hoverColor: 'var(--accent-light)' },
+  { icon: Facebook, href: 'https://facebook.com/techiethrives', label: 'GitHub', hoverColor: 'var(--accent-light)' },
   { icon: Youtube, href: 'https://www.youtube.com/@TECHIETHRIVES', label: 'youtube', hoverColor: 'var(--secondary-dark)' },
 ]
 

@@ -13,67 +13,43 @@ import {
   CheckCircle,
   Sparkles,
   Star,
-  Instagram
+  Crown,
+  Award,
+  Rocket
 } from 'lucide-react'
 
 // Popular services to highlight
-const popularServices = [
+const PackageServices = [
   {
-    id: 'insta-3month',
-    name: '3-Month Instagram Management',
-    price: '₹39,999',
-    description: 'Complete Instagram management with daily posting, content creation, and growth strategy',
-    features: ['Daily posting', 'Content creation', 'Story management', 'Growth analytics'],
-    icon: Instagram,
+    id: 'silver',
+    name: 'Silver',
+    price: '₹8,999/month',
+    description: 'Instagram management package for consistent brand presence',
+    features: ['8 Reels', '10 Posts', 'Caption writing', 'Hashtags'],
+    icon: Award,
     color: `linear-gradient(to bottom right, var(--secondary), var(--primary-dark))`
   },
   {
-    id: '10-reel-package',
-    name: '10 Reel Package',
-    price: '₹9,999',
-    description: 'Professional shoot + edit for 10 trending reels - best value package',
-    features: ['10 complete reels', 'Professional shooting', 'Trending edits', 'Social media ready'],
-    icon: Video,
+    id: 'gold',
+    name: 'Gold',
+    price: '₹12,999/month',
+    description: 'Growth-focused Instagram package with boosted reach',
+    features: ['15 Reels', '15 Posts', '3 Boost campaigns'],
+    icon: Rocket,
     color: `linear-gradient(to bottom right, var(--primary-dark), var(--secondary-light))`
   },
   {
-    id: 'multipage-web',
-    name: 'Multi-Page Website',
-    price: '₹3,999-₹7,999',
-    description: 'Custom responsive website with SEO optimization and modern design',
-    features: ['Responsive design', 'SEO optimized', 'CMS integration', 'Contact forms'],
-    icon: Globe,
+    id: 'premium',
+    name: 'Premium',
+    price: '₹17,999/month',
+    description: 'Complete Instagram management with engagement and analytics',
+    features: ['Daily content', 'Story management', 'Engagement', 'Basic analytics'],
+    icon: Crown,
     color: `linear-gradient(to bottom right, var(--secondary-light), var(--secondary-lightest))`
   }
 ]
 
 const serviceCategories = [
-  {
-    id: 'video-production',
-    icon: Video,
-    title: 'Video & Reel Production',
-    description: 'Professional video production services from short reels to full-length promotional content',
-    color: `linear-gradient(to bottom right, var(--primary-dark), var(--secondary-dark))`,
-    services: [
-      { id: 'promo-video', name: 'Promotion Video (5-12 minutes)', price: '₹1,499', features: ['Professional shooting', 'Color grading', 'Music & transitions'] },
-      { id: 'promo-reel', name: 'Promotion Reel (20-45 seconds)', price: '₹999', features: ['Trending formats', 'Fast-paced editing', 'Social media ready'] },
-      { id: 'cinematic-reel', name: 'Cinematic Reels', price: '₹999', features: ['Cinematic shots', 'Professional color', 'Story-driven'] },
-      { id: 'pre-wedding', name: 'Pre-Wedding Shoots', price: '₹14,999', features: ['Full day coverage', 'Multiple locations', '50+ edited photos'] },
-      { id: '10-reel-package', name: '10 Reel Package (Shoot + Edit)', price: '₹9,999', popular: true, features: ['10 complete reels', 'Shooting included', 'Best value package'] },
-      { id: 'youtube-package', name: 'YouTube Package', price: '₹11,999', features: ['3 long videos', '10 shorts', 'Thumbnails included'] }
-    ]
-  },
-  {
-    id: 'editing',
-    icon: Edit,
-    title: 'Editing Services',
-    description: 'Professional video editing services for content you\'ve already shot',
-    color: `linear-gradient(to bottom right, var(--secondary-light), var(--secondary-lightest))`,
-    services: [
-      { id: 'short-edit', name: 'Short Video Editing (30s-1min)', price: '₹899', features: ['Quick turnaround', 'Professional cuts', 'Music & effects'] },
-      { id: 'long-edit', name: 'Long Video Editing (10-20 min)', price: '₹1,499', features: ['Detailed editing', 'Color correction', 'Audio enhancement'] }
-    ]
-  },
   {
     id: 'design',
     icon: Palette,
@@ -81,44 +57,72 @@ const serviceCategories = [
     description: 'Creative design solutions for all your branding and marketing needs',
     color: `linear-gradient(to bottom right, var(--secondary), var(--secondary-dark))`,
     services: [
-      { id: 'poster', name: 'Poster Layouts', price: '₹699', features: ['Custom design', 'Print ready', 'Multiple formats'] },
-      { id: 'thumbnail', name: 'Thumbnails', price: '₹699', features: ['YouTube ready', 'Eye-catching design', 'Fast delivery'] },
-      { id: 'pamphlet', name: 'Pamphlets / Poster Design', price: '₹899', features: ['Professional design', 'Brand aligned', 'Print & digital'] },
-      { id: 'menu', name: 'Menu Designs', price: '₹799', features: ['Restaurant menus', 'Multiple pages', 'Print ready'] },
-      { id: 'logo', name: 'Logo Design', price: '₹499', features: ['Original concepts', 'Multiple revisions', 'All formats'] },
-      { id: 'visiting-card', name: 'Visiting Card Design', price: '₹899-₹1,499', features: ['Premium designs', 'Both sides', 'Print specs included'] },
+      { id: 'poster', name: 'Poster Layouts', price: '₹999/-', note: 'Printing charges extra (AtoQ)', features: ['Custom design', 'Print ready', 'Multiple formats'] },
+      { id: 'thumbnail', name: 'Thumbnails', price: '₹499', features: ['YouTube ready', 'Eye-catching design', 'Fast delivery'] },
+      { id: 'pamphlet', name: 'Pamphlets / Flyer Design', price: '₹1,299', note: 'Printing charges extra (AtoQ)', features: ['Professional design', 'Brand aligned', 'Print & digital'] },
+      { id: 'menu', name: 'Menu Designs', price: '₹799 – ₹1,499', features: ['Restaurant menus', 'Multiple pages', 'Print ready'] },
+      { id: 'logo', name: 'Logo Design', price: '₹999 – ₹2,499', features: ['Original concepts', 'Multiple revisions', 'All formats'] },
+      { id: 'visiting-card', name: 'Visiting Card Design', price: '₹899 – ₹1,499', features: ['Premium designs', 'Both sides', 'Print specs included'] },
       { id: 'presentation', name: 'Presentation Design', price: '₹4,999', features: ['Professional slides', 'Custom graphics', 'Brand consistency'] },
       { id: 'carousel', name: 'Carousel Video (8 photos)', price: '₹1,999', features: ['Smooth transitions', 'Music sync', 'Social media ready'] }
     ]
   },
-  {
+{
     id: 'web-app',
     icon: Globe,
     title: 'Web & App Development',
-    description: 'Custom websites and mobile applications built with modern technologies',
+    description: 'Modern websites and mobile applications for businesses',
     color: `linear-gradient(to bottom right, var(--primary-dark), var(--secondary))`,
     services: [
-      { id: 'portfolio-web', name: 'Portfolio Website', price: '₹2499', features: ['Responsive design', '3-5 pages', 'Contact form'] },
-      { id: 'multipage-web', name: 'Multi-Page Website', price: '₹5,999-₹10,999', features: ['Custom design', 'SEO optimized', 'CMS integration'] },
-      { id: 'ecommerce', name: 'E-Commerce Website', price: '₹14,999', note: 'Domain price not included', features: ['Product management', 'Payment gateway', 'Admin dashboard'] },
-      { id: 'app-dev', name: 'App Development', price: '₹15,999-₹19,999', features: ['iOS & Android', 'Custom features', 'Backend included'] }
+      { id: 'portfolio-web', name: 'Portfolio Website', price: '₹2,499 – ₹4,999', features: ['Responsive design', 'Contact form'] },
+      { id: 'business-web', name: 'Business Website', price: '₹8,999 – ₹10,999', popular: true, note: 'Domain price not included', features: ['Custom design', '4-6 pages'] },
+      { id: 'ecommerce', name: 'E-Commerce Website', price: '₹14,999 – ₹19,999', note: 'Domain price not included', features: ['Product management', 'Payment gateway', 'Admin dashboard'] },
+      { id: 'custom-web', name: 'Custom Website', price: 'Starting ₹29,999', note: 'Domain price not included', features: ['6 month support', '3D animation', 'SEO optimized', 'CMS integration'] },
+      { id: 'basic-app', name: 'Basic App', price: '₹15,999 – ₹34,999', features: ['iOS & Android', 'Limited features', 'Required backend'] },
+      { id: 'advanced-app', name: 'Advanced App', price: '₹39,999 – ₹49,999+', features: ['iOS & Android', 'Custom features', 'Solid backend'] }
     ]
   },
   {
+    id: 'video-production',
+    icon: Video,
+    title: 'Video & Reel Production',
+    description: 'Professional video production services for brands and creators',
+    color: `linear-gradient(to bottom right, var(--primary-dark), var(--secondary-dark))`,
+    services: [
+      { id: 'reel-package', name: '10 Reel Package', price: '₹9,999 – ₹12,999', popular: true, features: ['10 complete reels', 'Professional shooting', 'Trending edits'] },
+      { id: 'promo-video', name: 'Promotion Video (5-12 minutes)', price: '₹3,999 – ₹9,999', features: ['Professional shooting', 'Color grading', 'Music & transitions'] },
+      { id: 'promo-reel', name: 'Promotion Reel (20-45 seconds)', price: '₹1,499', features: ['Trending formats', 'Fast-paced editing', 'Social media ready'] },
+      { id: 'cinematic-reel', name: 'Cinematic Reels', price: '₹1,999', features: ['Cinematic shots', 'Professional color', 'Story-driven'] },
+      { id: 'pre-wedding', name: 'Pre-Wedding Shoots', price: '₹14,999 – ₹39,999', features: ['Full day coverage', 'Multiple locations', '50+ edited photos'] },
+      { id: 'youtube-package', name: 'YouTube Package', price: '₹14,999', features: ['3 long videos', '10 shorts', 'Thumbnails included'] }
+    ]
+  },
+{
     id: 'social-ads',
     icon: TrendingUp,
     title: 'Social Media & Ads Management',
-    description: 'Complete social media management and advertising services to grow your brand',
+    description: 'Grow your brand with targeted advertising and social media strategies',
     color: `linear-gradient(to bottom right, var(--secondary-dark), var(--secondary-darkest))`,
     services: [
-      { id: 'meta-ads', name: 'Meta Ads Management', price: '₹4,999/week', note: '+ Ad spend', features: ['Facebook & Instagram', 'Campaign setup', 'Performance tracking'] },
-      { id: 'google-ads', name: 'Google Ads Management', price: '₹1,999', note: 'Ad spend extra', features: ['Search campaigns', 'Display ads', 'ROI optimization'] },
-      { id: 'insta-3month', name: '3-Month Instagram Management', price: '₹39,999', popular: true, features: ['Daily posting', 'Content creation', 'Growth strategy', 'Reports'] },
-      { id: 'insta-1month', name: '1-Month Instagram Management', price: '₹17,999', features: ['Daily content', 'Story management', 'Engagement', 'Basic analytics'] }
+      { id: 'meta-ads', name: 'Meta Ads Management', price: '₹2,499/week', note: '+ Ad spend', features: ['Facebook & Instagram', 'Campaign setup', 'Performance tracking'] },
+      { id: 'google-ads', name: 'Google Ads Management', price: '₹4,999', note: 'Ad spend extra', features: ['Search campaigns', 'Display ads', 'ROI optimization'] },
+      { id: 'insta-3month', name: '3-Month Instagram Management', price: '₹35,999', popular: true, features: ['Algorithm posting', 'Content creation', 'Story management', 'Growth analytics'] }
     ]
-  }
-]
+  },
+  {
+    id: 'editing',
+    icon: Edit,
+    title: 'Editing Services',
+    description: 'Professional editing for videos you have already recorded',
+    color: `linear-gradient(to bottom right, var(--secondary-light), var(--secondary-lightest))`,
+    services: [
+      { id: 'short-edit', name: 'Short Video Editing (30s-1min)', price: '₹999', features: ['Quick turnaround', 'Professional cuts', 'Music & effects'] },
+      { id: 'long-edit', name: 'Long Video Editing (10-20 min)', price: '₹1,499 – ₹2,499', features: ['Detailed editing', 'Color correction', 'Audio enhancement'] }
+    ]
+  },
 
+  
+]
 export default function ServicesPage() {
   return (
     <main className="min-h-screen text-white" style={{ background: 'var(--primary-black)' }}>
@@ -154,7 +158,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Popular Services Section */}
+      {/* Package Services Section */}
       <section className="py-20 px-6" style={{
         background: 'linear-gradient(to bottom, var(--primary-black), #111111)'
       }}>
@@ -171,12 +175,12 @@ export default function ServicesPage() {
               borderColor: 'rgba(185, 128, 37, 0.3)'
             }}>
               <Star className="w-4 h-4" style={{ color: 'var(--secondary)' }} />
-              <span className="text-sm font-semibold" style={{ color: 'var(--secondary)' }}>Most Popular</span>
+              <span className="text-sm font-semibold" style={{ color: 'var(--secondary)' }}>Packages</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent" style={{
               backgroundImage: 'linear-gradient(to right, var(--secondary), var(--primary-dark))'
             }}>
-              Popular Services
+              Package Services
             </h2>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto">
               Our most requested services chosen by hundreds of satisfied clients
@@ -184,7 +188,7 @@ export default function ServicesPage() {
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {popularServices.map((service, index) => {
+            {PackageServices.map((service, index) => {
               const Icon = service.icon
               return (
                 <motion.div
@@ -195,7 +199,7 @@ export default function ServicesPage() {
                   transition={{ duration: 0.6, delay: index * 0.2 }}
                   className="group relative"
                 >
-                  {/* Popular Star */}
+                  {/* Package Star */}
                   <div className="absolute -top-3 -right-3 z-10">
                     <div className="p-2 rounded-full shadow-lg" style={{
                       background: 'linear-gradient(to right, var(--secondary), var(--primary-dark))'

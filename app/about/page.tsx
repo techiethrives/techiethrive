@@ -51,7 +51,7 @@ const values = [
 const team = [
   {
     name: 'Chetan Gaur',
-    role: 'Team Lead & Developer',
+    role: 'Founder & Developer',
     image: '/team/1.jpg',
     bio: 'Team Lead & Developer driving scalable solutions while guiding teams through efficient collaboration and technical excellence.',
     social: {
@@ -63,7 +63,7 @@ const team = [
   },
   {
     name: 'Priyanshu Rathor',
-    role: 'UI & Web designer & Innovation Officer',
+    role: 'Co-Founder & Innovation Officer',
     image: '/team/2.jpg',
     bio: 'UI & Web Designer creating user-focused interfaces and innovative web solutions through creativity and strategic design.',
     social: {
@@ -75,7 +75,7 @@ const team = [
   },
   {
     name: 'Anurag Agarwal',
-    role: 'Editor & Social Media Manager',
+    role: 'Managing director',
     image: '/team/3.jpg',
     bio: 'Editor & Social Media Manager driving reach, engagement, and brand identity through creative content and data-driven strategies.',
     social: {
@@ -84,19 +84,7 @@ const team = [
       phonecall: '6377973977',
       email: 'anuragagarwal15267@gmail.com'
     }
-  },
-  {
-    name: 'Ankit Meena',
-    role: 'Data Analyzer & Marketing',
-    image: '/team/4.png',
-    bio: 'Data Analyzer & Marketing professional turning insights into effective campaigns through strategic planning and performance optimization.',
-    social: {
-      linkedin: '',
-      instagram: 'https://www.instagram.com/ its_ankit.x',
-      phonecall: '8769706816',
-      email: 'ankitmeena3611@gmail.com'
-    }
-  },
+  }
 ]
 
 export default function AboutPage() {

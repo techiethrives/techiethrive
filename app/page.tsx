@@ -5,7 +5,6 @@ import { ArrowRight, Code2, Palette, Rocket, Sparkles } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import Scene3D from '@/components/Scene3D'
-import ParticleBackground from '@/components/ParticleBackground' // Add this import
 
 export default function Home() {
   return (
