@@ -114,14 +114,14 @@ export default function Footer() {
               <div className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 mt-0.5" style={{ color: 'var(--secondary)' }} />
                 <a 
-                  href="https://maps.app.goo.gl/KtoyviZk2XjkbZkS9" 
+                  href="https://maps.app.goo.gl/tJEYzXheVUc6skWo9" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="transition-colors"
                   onMouseOver={(e) => e.currentTarget.style.color = 'var(--secondary)'}
                   onMouseOut={(e) => e.currentTarget.style.color = 'rgb(156, 163, 175)'}
                 >
-                  1st floor, above Santosh bakers dadabari, <br /> dadabari extension, Kota, Rajasthan 324009
+                  Kota, Rajasthan ,324009 INDIA
                 </a>
               </div>
             </div>

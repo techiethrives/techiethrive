@@ -53,36 +53,36 @@ const team = [
     name: 'Chetan Gaur',
     role: 'Founder & Developer',
     image: '/team/1.jpg',
-    bio: 'Team Lead & Developer driving scalable solutions while guiding teams through efficient collaboration and technical excellence.',
+    bio: ' Founder & Developer at Techie Thrives, building scalable digital solutions and empowering businesses through technology and innovation.',
     social: {
       linkedin: 'https://www.linkedin.com/in/chetan-gaur-156089366?trk=contact-info',
       instagram: 'https://www.instagram.com/im_chetan_578?igsh=MXhncmJjbWZxbnZuNQ%3D%3D&utm_source=qr',
       phonecall: '9257676694',
-      email: 'Chetangaur966@gmail.com'
-    }
-  },
-  {
-    name: 'Priyanshu Rathor',
-    role: 'Co-Founder & Innovation Officer',
-    image: '/team/2.jpg',
-    bio: 'UI & Web Designer creating user-focused interfaces and innovative web solutions through creativity and strategic design.',
-    social: {
-      linkedin: 'https://www.linkedin.com/in/priyanshu-rathor-792535312?utm_source=share_via&utm_content=profile&utm_medium=member_ios ',
-      instagram: 'https://www.instagram.com/_pr1yanshu_?igsh=emJveHM5aGVmZnpn&utm_source=qr',
-      phonecall: '7413078090',
-      email: 'priyanshurathor612@gmail.com'
+      email: 'chetangaur966@gmail.com'
     }
   },
   {
     name: 'Anurag Agarwal',
     role: 'Managing director',
     image: '/team/3.jpg',
-    bio: 'Editor & Social Media Manager driving reach, engagement, and brand identity through creative content and data-driven strategies.',
+    bio: 'Managing Director at Techie Thrives, overseeing strategy, operations, and creative direction to build strong digital brand presence.',
     social: {
       linkedin: 'https://www.linkedin.com/in/anurag-agarwal-57b62838a?utm_source=share_via&utm_content=profile&utm_medium=member_android',
       instagram: 'https://www.instagram.com/anurag_15267?igsh=MnJhNnBueHcyZmlp',
       phonecall: '6377973977',
       email: 'anuragagarwal15267@gmail.com'
+    }
+  },
+  {
+    name: 'Priyanshu Rathor',
+    role: 'Early Supporter & Investor',
+    image: '/team/2.jpg',
+    bio: 'Supported the early phase of Techie Thrives and contributed to initial ideas and direction.',
+    social: {
+      linkedin: 'https://www.linkedin.com/in/priyanshu-rathor-792535312?utm_source=share_via&utm_content=profile&utm_medium=member_ios ',
+      instagram: 'https://www.instagram.com/_pr1yanshu_?igsh=emJveHM5aGVmZnpn&utm_source=qr',
+      phonecall: '7413078090',
+      email: 'priyanshurathor612@gmail.com'
     }
   }
 ]

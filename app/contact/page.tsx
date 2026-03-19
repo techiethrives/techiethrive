@@ -34,7 +34,7 @@ const contactInfo = [
     icon: MapPin,
     title: 'Visit Us',
     details: 'Kota, Rajasthan',
-    link: 'https://maps.app.goo.gl/KtoyviZk2XjkbZkS9',
+    link: 'https://maps.app.goo.gl/tJEYzXheVUc6skWo9',
     color: `linear-gradient(to bottom right, var(--secondary), var(--secondary-dark))`
   },
   {
@@ -486,7 +486,7 @@ export default function ContactPage() {
               {/* Map */}
               <div className="relative h-80 rounded-2xl overflow-hidden border border-gray-800">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d225.70805743869843!2d75.83231325842632!3d25.15836934556821!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1765631370770!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d194317.12807745842!2d75.5312712091595!3d25.180390812224257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396f9b30c41bb44d%3A0x5f5c103200045588!2sKota%2C%20Rajasthan!5e0!3m2!1sen!2sin!4v1773745881521!5m2!1sen!2sin"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}

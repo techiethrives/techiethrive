@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { 
+import {
   Instagram,
   Camera,
   Video,
@@ -18,8 +18,16 @@ import {
   Zap,
   Target,
   ArrowRight,
+  Star,
   Phone
 } from 'lucide-react'
+
+// ✅ Import everything from single source of truth
+import {
+  packageServices,
+  serviceCategories,
+  getServicePagePriceDisplay
+} from '@/app/servicedata/page'
 
 const contractPlans = [
   {
@@ -42,7 +50,7 @@ const contractPlans = [
   {
     name: '3-Month Contract',
     duration: '90 Days',
-    price: '₹39,999',
+    price: '₹35,999',
     savings: 'Save ₹14,000',
     popular: true,
     features: [
@@ -228,14 +236,14 @@ export default function InstagramManagementPage() {
                 <div className="absolute -inset-0.5 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-500" style={{
                   background: plan.color
                 }} />
-                
+
                 {/* Card Content */}
                 <div className="relative p-8 backdrop-blur-sm rounded-2xl border transition-all duration-300" style={{
                   background: 'rgba(17, 17, 17, 0.9)',
                   borderColor: '#2a2a2a'
                 }}
-                onMouseEnter={(e) => e.currentTarget.style.borderColor = 'var(--secondary)'}
-                onMouseLeave={(e) => e.currentTarget.style.borderColor = '#2a2a2a'}
+                  onMouseEnter={(e) => e.currentTarget.style.borderColor = 'var(--secondary)'}
+                  onMouseLeave={(e) => e.currentTarget.style.borderColor = '#2a2a2a'}
                 >
                   <div className="text-center mb-6">
                     <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
@@ -270,6 +278,102 @@ export default function InstagramManagementPage() {
                 </div>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+      {/* Package Services Section */}
+      <section className="py-20 px-6" style={{
+        background: 'linear-gradient(to bottom, var(--primary-black), #111111)'
+      }}>
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 mb-4 rounded-full border" style={{
+              background: 'linear-gradient(to right, rgba(185, 128, 37, 0.2), rgba(0, 43, 39, 0.2))',
+              borderColor: 'rgba(185, 128, 37, 0.3)'
+            }}>
+              <Star className="w-4 h-4" style={{ color: 'var(--secondary)' }} />
+              <span className="text-sm font-semibold" style={{ color: 'var(--secondary)' }}>Packages</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent" style={{
+              backgroundImage: 'linear-gradient(to right, var(--secondary), var(--primary-dark))'
+            }}>
+              Package Services
+            </h2>
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+              Our most requested services chosen by hundreds of satisfied clients
+            </p>
+          </motion.div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {packageServices.map((service, index) => {
+              const Icon = service.icon
+              return (
+                <motion.div
+                  key={service.id}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  className="group relative"
+                >
+                  <div className="absolute -top-3 -right-3 z-10">
+                    <div className="p-2 rounded-full shadow-lg" style={{
+                      background: 'linear-gradient(to right, var(--secondary), var(--primary-dark))'
+                    }}>
+                      <Star className="w-4 h-4 fill-current" />
+                    </div>
+                  </div>
+
+                  <div className="absolute -inset-0.5 rounded-2xl blur opacity-40 group-hover:opacity-70 transition duration-500" style={{
+                    background: service.color
+                  }} />
+
+                  <div className="relative p-8 backdrop-blur-sm rounded-2xl border transition-all duration-300 h-full flex flex-col" style={{
+                    background: 'rgba(17, 17, 17, 0.9)',
+                    borderColor: 'var(--secondary)'
+                  }}>
+                    <div className="inline-flex p-4 rounded-xl mb-4 w-fit" style={{
+                      background: service.color
+                    }}>
+                      <Icon className="w-8 h-8" />
+                    </div>
+
+                    <h3 className="text-xl font-bold mb-2">{service.name}</h3>
+                    <div className="text-3xl font-bold bg-clip-text text-transparent mb-3" style={{
+                      backgroundImage: 'linear-gradient(to right, var(--secondary), var(--primary-dark))'
+                    }}>
+                      {/* ✅ Uses helper from data file */}
+                      {getServicePagePriceDisplay(service.price)}
+                    </div>
+                    <p className="text-gray-400 text-sm mb-4">{service.description}</p>
+
+                    <ul className="space-y-2 mb-6 flex-1">
+                      {service.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-start gap-2 text-sm text-gray-400">
+                          <CheckCircle className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: 'var(--secondary)' }} />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <Link href={`/services-book?service=${service.id}`}>
+                      <button className="w-full px-6 py-3 rounded-lg font-semibold hover:scale-105 transition-transform flex items-center justify-center gap-2" style={{
+                        background: 'linear-gradient(to right, var(--secondary), var(--primary-dark))',
+                        boxShadow: '0 10px 25px -5px rgba(185, 128, 37, 0.3)'
+                      }}>
+                        Book Now
+                        <ArrowRight className="w-4 h-4" />
+                      </button>
+                    </Link>
+                  </div>
+                </motion.div>
+              )
+            })}
           </div>
         </div>
       </section>
@@ -313,8 +417,8 @@ export default function InstagramManagementPage() {
                     background: 'rgba(17, 17, 17, 0.9)',
                     borderColor: '#2a2a2a'
                   }}
-                  onMouseEnter={(e) => e.currentTarget.style.borderColor = 'var(--secondary)'}
-                  onMouseLeave={(e) => e.currentTarget.style.borderColor = '#2a2a2a'}
+                    onMouseEnter={(e) => e.currentTarget.style.borderColor = 'var(--secondary)'}
+                    onMouseLeave={(e) => e.currentTarget.style.borderColor = '#2a2a2a'}
                   >
                     <div className="inline-flex p-3 rounded-xl mb-4" style={{
                       background: activity.color
@@ -462,7 +566,7 @@ export default function InstagramManagementPage() {
             borderColor: 'rgba(185, 128, 37, 0.2)'
           }}>
             <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.03)_1px,transparent_1px)] bg-[size:30px_30px]" />
-            
+
             <div className="relative">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
                 Ready to Grow Your Instagram?

@@ -79,7 +79,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-xl md:text-2xl text-gray-400 mb-6 max-w-3xl mx-auto"
           >
-            Where Curiosity Meets Creativity
+            Your Complete Digital Growth Partner.
           </motion.p>
 
           {/* Tagline */}
