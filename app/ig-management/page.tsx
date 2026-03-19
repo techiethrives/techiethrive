@@ -311,7 +311,7 @@ export default function InstagramManagementPage() {
           </motion.div>
           <div className="grid md:grid-cols-3 gap-8">
             {packageServices.map((service, index) => {
-              const Icon = service.icon
+              const Icon = service.icon as React.ComponentType<{ className: string }>
               return (
                 <motion.div
                   key={service.id}
