@@ -25,7 +25,7 @@ import {
   serviceCategories,
   packageServices,
   getServicePagePriceDisplay
-} from '@/app/servicedata/page.ts'
+} from '@/lib/servicedata/page.ts'
 
 // ─── Flat list for booking page ──────────────────────────────
 // Each service already has bookingPrice (midpoint) and bookingPriceNote

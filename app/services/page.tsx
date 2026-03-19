@@ -14,7 +14,7 @@ import {
   packageServices,
   serviceCategories,
   getServicePagePriceDisplay
-} from '@/app/servicedata/page.ts'
+} from '@/lib/servicedata/page.ts'
 
 export default function ServicesPage() {
   return (

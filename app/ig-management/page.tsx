@@ -27,7 +27,7 @@ import {
   packageServices,
   serviceCategories,
   getServicePagePriceDisplay
-} from '@/app/servicedata/page'
+} from '@/lib/servicedata/page'
 
 const contractPlans = [
   {
