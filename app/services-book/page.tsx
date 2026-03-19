@@ -24,8 +24,9 @@ import {
   getAllServicesFlat,
   serviceCategories,
   packageServices,
-  getServicePagePriceDisplay
-} from '@/lib/servicedata/page.ts'
+  getServicePagePriceDisplay,
+  getBookingPriceNote
+} from '@/lib/servicedata/page'
 
 // ─── Flat list for booking page ──────────────────────────────
 // Each service already has bookingPrice (midpoint) and bookingPriceNote
@@ -177,7 +178,7 @@ function BookServiceContent() {
         name: service?.name,
         displayPrice: service?.bookingPrice,
         category: service?.category,
-        rangeNote: getBookingPriceNote(service!.price)
+        rangeNote: service?.bookingPriceNote
       }
     })
 
@@ -508,7 +509,7 @@ function BookServiceContent() {
                                 </div>
 
                                 {/* Note if any */}
-                                {service.note && (
+                                {'note' in service && service.note && (
                                   <p className="text-xs text-gray-500 mb-3">{service.note}</p>
                                 )}
 
@@ -642,7 +643,7 @@ function BookServiceContent() {
                                       </div>
 
                                       {/* Note */}
-                                      {service.note && (
+                                      {'note' in service && service.note && (
                                         <p className="text-xs text-gray-500 mb-2">{service.note}</p>
                                       )}
 
