@@ -282,7 +282,7 @@ export const serviceCategories: ServiceCategory[] = [
       {
         id: 'insta-3month',
         name: '3-Month Instagram Management',
-        price: { type: 'fixed', amount: 35999 },
+        price: { type: 'fixed', amount: 39999 },
         note: '90 Days contract • Save ₹14,000',
         popular: true,
         features: [

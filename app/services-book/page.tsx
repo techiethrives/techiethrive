@@ -24,8 +24,7 @@ import {
   getAllServicesFlat,
   serviceCategories,
   packageServices,
-  getServicePagePriceDisplay,
-  getBookingPriceNote
+  getServicePagePriceDisplay
 } from '@/lib/servicedata/page'
 
 // ─── Flat list for booking page ──────────────────────────────
@@ -178,7 +177,7 @@ function BookServiceContent() {
         name: service?.name,
         displayPrice: service?.bookingPrice,
         category: service?.category,
-        rangeNote: service?.bookingPriceNote
+        rangeNote: service?.bookingPriceNote ?? null
       }
     })
 
@@ -417,9 +416,8 @@ function BookServiceContent() {
                     <button
                       key={category}
                       onClick={() => setSelectedCategory(category)}
-                      className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                        selectedCategory === category ? 'text-white' : 'text-gray-400 hover:bg-gray-700'
-                      }`}
+                      className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${selectedCategory === category ? 'text-white' : 'text-gray-400 hover:bg-gray-700'
+                        }`}
                       style={selectedCategory === category ? {
                         background: 'linear-gradient(to right, var(--primary-dark), var(--secondary))'
                       } : {
@@ -509,8 +507,8 @@ function BookServiceContent() {
                                 </div>
 
                                 {/* Note if any */}
-                                {'note' in service && service.note && (
-                                  <p className="text-xs text-gray-500 mb-3">{service.note}</p>
+                                {('note' in service ? service.note : null) && (
+                                  <p className="text-xs text-gray-500 mb-3">{(service as any).note}</p>
                                 )}
 
                                 {/* Divider */}
@@ -643,8 +641,9 @@ function BookServiceContent() {
                                       </div>
 
                                       {/* Note */}
-                                      {'note' in service && service.note && (
-                                        <p className="text-xs text-gray-500 mb-2">{service.note}</p>
+                             
+                                      {('note' in service ? service.note : null) && (
+                                        <p className="text-xs text-gray-500 mb-2">{(service as any).note}</p>
                                       )}
 
                                       <div className="border-t mb-3" style={{ borderColor: '#2a2a2a' }} />

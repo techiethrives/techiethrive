@@ -1,9 +1,8 @@
 'use client'
-
-import React from 'react'
+import type { ElementType } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { 
+import {
   ArrowRight,
   CheckCircle,
   Sparkles,
@@ -14,7 +13,7 @@ import {
 import {
   packageServices,
   serviceCategories,
-  getServicePagePriceDisplay,
+  getServicePagePriceDisplay
 } from '@/lib/servicedata/page'
 
 export default function ServicesPage() {
@@ -80,9 +79,10 @@ export default function ServicesPage() {
               Our most requested services chosen by hundreds of satisfied clients
             </p>
           </motion.div>
+
           <div className="grid md:grid-cols-3 gap-8">
             {packageServices.map((service, index) => {
-              const Icon = service.icon as React.ElementType
+              const Icon = service.icon as React.ElementType<{ className?: string }>
               return (
                 <motion.div
                   key={service.id}
@@ -118,6 +118,7 @@ export default function ServicesPage() {
                     <div className="text-3xl font-bold bg-clip-text text-transparent mb-3" style={{
                       backgroundImage: 'linear-gradient(to right, var(--secondary), var(--primary-dark))'
                     }}>
+                      {/* ✅ Uses helper from data file */}
                       {getServicePagePriceDisplay(service.price)}
                     </div>
                     <p className="text-gray-400 text-sm mb-4">{service.description}</p>
@@ -150,7 +151,7 @@ export default function ServicesPage() {
 
       {/* All Service Categories — auto-generated from data file */}
       {serviceCategories.map((category, categoryIndex) => {
-        const Icon = category.icon as React.ElementType
+        const Icon = category.icon as React.ElementType<{ className?: string }>
         return (
           <section
             key={category.id}
@@ -218,6 +219,7 @@ export default function ServicesPage() {
                       <h3 className="text-lg font-bold mb-2 text-white">{service.name}</h3>
 
                       <div className="mb-4">
+                        {/* ✅ Price displayed using helper — no manual formatting needed */}
                         <div className="text-2xl font-bold bg-clip-text text-transparent" style={{
                           backgroundImage: 'linear-gradient(to right, var(--primary-dark), var(--secondary))'
                         }}>
