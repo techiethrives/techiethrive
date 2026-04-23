@@ -59,7 +59,7 @@ export const packageServices: PackageService[] = [
     name: 'Silver',
     price: { type: 'fixed', amount: 8999, suffix: '/month' },
     description: 'Instagram management package for consistent brand presence',
-    features: ['8 Reels', '10 Posts', 'Caption writing', 'Hashtags'],
+    features: ['8 Reels', '5 Posts', 'Caption writing', 'Hashtags'],
     icon: Award,
     color: `linear-gradient(to bottom right, var(--secondary), var(--primary-dark))`
   },
@@ -68,7 +68,7 @@ export const packageServices: PackageService[] = [
     name: 'Gold',
     price: { type: 'fixed', amount: 12999, suffix: '/month' },
     description: 'Growth-focused Instagram package with boosted reach',
-    features: ['15 Reels', '15 Posts', '3 Boost campaigns'],
+    features: ['10 Reels', '8 Posts', '3 Boost campaigns'],
     icon: Rocket,
     color: `linear-gradient(to bottom right, var(--primary-dark), var(--secondary-light))`
   },
@@ -111,7 +111,7 @@ export const serviceCategories: ServiceCategory[] = [
       {
         id: 'pamphlet',
         name: 'Pamphlets / Flyer Design',
-        price: { type: 'fixed', amount: 1299 },
+        price: { type: 'fixed', amount: 899 },
         note: 'Printing charges extra (AtoQ)',
         features: ['Professional design', 'Brand aligned', 'Print & digital']
       },
