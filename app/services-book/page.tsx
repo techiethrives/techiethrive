@@ -477,84 +477,8 @@ function BookServiceContent() {
                           </div>
                         </motion.button>
 
-                        {/* ── Hover Tooltip ── */}
-                        <AnimatePresence>
-                          {isHovered && (
-                            <motion.div
-                              initial={{ opacity: 0, scale: 0.95, x: tooltipPos === 'right' ? -8 : 8 }}
-                              animate={{ opacity: 1, scale: 1, x: 0 }}
-                              exit={{ opacity: 0, scale: 0.95 }}
-                              transition={{ duration: 0.15 }}
-                              className="absolute top-0 z-50 w-64 pointer-events-none"
-                              style={tooltipPos === 'right'
-                                ? { left: 'calc(100% + 12px)' }
-                                : { right: 'calc(100% + 12px)' }
-                              }
-                            >
-                              <div className="rounded-xl border p-4 shadow-2xl" style={{
-                                background: '#0d0d0d',
-                                borderColor: 'var(--secondary)',
-                                boxShadow: '0 0 24px rgba(185, 128, 37, 0.15)'
-                              }}>
-                                {/* Service name */}
-                                <h4 className="font-bold text-white text-sm mb-1">{service.name}</h4>
-
-                                {/* Full price (service-page style) */}
-                                <div className="text-base font-bold mb-1 bg-clip-text text-transparent" style={{
-                                  backgroundImage: 'linear-gradient(to right, var(--primary-dark), var(--secondary))'
-                                }}>
-                                  {getServicePagePriceDisplay(service.price)}
-                                </div>
-
-                                {/* Note if any */}
-                                {('note' in service ? service.note : null) && (
-                                  <p className="text-xs text-gray-500 mb-3">{(service as any).note}</p>
-                                )}
-
-                                {/* Divider */}
-                                <div className="border-t mb-3" style={{ borderColor: '#2a2a2a' }} />
-
-                                {/* Features */}
-                                <ul className="space-y-1.5">
-                                  {service.features.map((feature: string, idx: number) => (
-                                    <li key={idx} className="flex items-start gap-2 text-xs text-gray-300">
-                                      <CheckCircle className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: 'var(--secondary)' }} />
-                                      <span>{feature}</span>
-                                    </li>
-                                  ))}
-                                </ul>
-
-                                {/* Booking price note */}
-                                {service.bookingPriceNote && (
-                                  <div className="mt-3 pt-3 border-t flex items-start gap-1.5" style={{ borderColor: '#2a2a2a' }}>
-                                    <Info className="w-3 h-3 flex-shrink-0 mt-0.5" style={{ color: '#fb923c' }} />
-                                    <p className="text-xs leading-relaxed" style={{ color: '#fb923c' }}>
-                                      Booking price shown is an estimate
-                                    </p>
-                                  </div>
-                                )}
-
-                                {/* Arrow pointing back to the card */}
-                                <div
-                                  className="absolute top-4 w-2.5 h-2.5 rotate-45 border"
-                                  style={tooltipPos === 'right' ? {
-                                    left: '-6px',
-                                    background: '#0d0d0d',
-                                    borderColor: 'var(--secondary)',
-                                    borderRight: 'none',
-                                    borderTop: 'none'
-                                  } : {
-                                    right: '-6px',
-                                    background: '#0d0d0d',
-                                    borderColor: 'var(--secondary)',
-                                    borderLeft: 'none',
-                                    borderBottom: 'none'
-                                  }}
-                                />
-                              </div>
-                            </motion.div>
-                          )}
-                        </AnimatePresence>
+                       
+                        
                       </div>
                     )
                   })}

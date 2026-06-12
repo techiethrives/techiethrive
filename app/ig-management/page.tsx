@@ -50,7 +50,7 @@ const contractPlans = [
   {
     name: '3-Month Contract',
     duration: '90 Days',
-    price: '₹35,999',
+    price: '₹39,999',
     savings: 'Save ₹14,000',
     popular: true,
     features: [

@@ -457,7 +457,7 @@ export default function NewStrategyPage() {
                   Schedule Consultation
                 </a>
                 <a
-                  href="/portfolio"
+                  href="..."
                   className="px-8 py-4 border-2 rounded-full font-semibold text-lg transition-all" style={{
                     borderColor: 'var(--secondary)',
                     background: 'transparent'

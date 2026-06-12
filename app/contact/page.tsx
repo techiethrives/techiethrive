@@ -47,10 +47,10 @@ const contactInfo = [
 ]
 
 const socialLinks = [
-  { icon: Instagram, href: 'https://www.instagram.com/techiethrives/#', label: 'Instagram', hoverColor: 'var(--secondary)' },
+  { icon: Instagram, href: 'https://www.instagram.com/techiethrives/', label: 'Instagram', hoverColor: 'var(--secondary)' },
   { icon: Twitter, href: 'https://x.com/Techie_Thrives', label: 'Twitter', hoverColor: 'var(--secondary-light)' },
-  { icon: Linkedin, href: 'https://linkedin.com/in/techie-thrives-digital-creation-agency-332661399 ', label: 'LinkedIn', hoverColor: 'var(--secondary-lightest)' },
-  { icon: Facebook, href: 'https://facebook.com/techiethrives', label: 'GitHub', hoverColor: 'var(--accent-light)' },
+  { icon: Linkedin, href: 'https://www.linkedin.com/company/112438587/admin/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BTlPPVHdbSA%2BrcITgtHkhPw%3D%3D', label: 'LinkedIn', hoverColor: 'var(--secondary-lightest)' },
+  { icon: Facebook, href: 'https://www.facebook.com/profile.php?id=61581316047644', label: 'Facebook', hoverColor: 'var(--accent-light)' },
   { icon: Youtube, href: 'https://www.youtube.com/@TECHIETHRIVES', label: 'youtube', hoverColor: 'var(--secondary-dark)' },
 ]
 

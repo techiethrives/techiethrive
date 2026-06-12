@@ -3,7 +3,7 @@
 // Edit services HERE only — both pages update automatically
 // ============================================================
 
-import { Award, Rocket, Crown, Palette, Globe, Video, TrendingUp, Edit } from 'lucide-react'
+import { Award, Rocket, Crown, Palette, Globe, Video, TrendingUp, Edit, Wrench, Bug, Settings } from 'lucide-react'
 
 // ─── HELPER: Calculate midpoint price for booking page ───────
 export function getMidpointPrice(min: number, max: number): number {
@@ -23,6 +23,7 @@ export type ServicePrice =
   | { type: 'fixed'; amount: number; suffix?: string }       // e.g. ₹999 or ₹999/month
   | { type: 'range'; min: number; max: number }              // e.g. ₹999 – ₹2,499
   | { type: 'starting'; amount: number }                     // e.g. Starting ₹29,999
+  | { type: 'starting-range'; min: number; max: number }    // e.g. Starting ₹19,999 – ₹34,999
 
 export interface Service {
   id: string
@@ -68,7 +69,7 @@ export const packageServices: PackageService[] = [
     name: 'Gold',
     price: { type: 'fixed', amount: 12999, suffix: '/month' },
     description: 'Growth-focused Instagram package with boosted reach',
-    features: ['10 Reels', '8 Posts', '3 Boost campaigns'],
+    features: ['10 Reels', '8 Posts', '2 Boost campaigns'],
     icon: Rocket,
     color: `linear-gradient(to bottom right, var(--primary-dark), var(--secondary-light))`
   },
@@ -131,6 +132,7 @@ export const serviceCategories: ServiceCategory[] = [
         id: 'visiting-card',
         name: 'Visiting Card Design',
         price: { type: 'range', min: 899, max: 1499 },
+        note: 'Printing charges extra (AtoQ)',
         features: ['Premium designs', 'Both sides', 'Print specs included']
       },
       {
@@ -158,41 +160,57 @@ export const serviceCategories: ServiceCategory[] = [
         id: 'portfolio-web',
         name: 'Portfolio Website',
         price: { type: 'range', min: 2499, max: 4999 },
-        features: ['Responsive design', 'Contact form']
+        features: ['Responsive design', '1-3 Pages', 'Contact form', 'Basic UI Design']
+      },
+      {
+        id: 'static-web',
+        name: 'Static Website (Visiting)',
+        price: { type: 'range', min: 3999, max: 7999 },
+        note: 'Domain & Hosting price not included',
+        features: ['Basic Design', 'Mobile Responsive', '3-5 pages', 'Fast loading']
+      },
+      {
+        id: 'dynamic-web',
+        name: 'Dynamic Website',
+        price: { type: 'range', min: 7999, max: 14999 },
+        note: 'Domain & Hosting price not included',
+        features: ['5-10 Pages', 'Contact & Inquiry form', 'Mail Integration / Admin Panel']
       },
       {
         id: 'business-web',
         name: 'Business Website',
-        price: { type: 'range', min: 8999, max: 10999 },
-        note: 'Domain price not included',
+        price: { type: 'range', min: 8999, max: 18999 },
+        note: 'Domain & Hosting price not included',
         popular: true,
-        features: ['Custom design', '4-6 pages']
+        features: ['Custom design', '5-8 pages', 'SEO Friendly Structure', 'Contact Forms + Google Map']
       },
       {
         id: 'ecommerce',
         name: 'E-Commerce Website',
-        price: { type: 'range', min: 14999, max: 19999 },
-        note: 'Domain price not included',
-        features: ['Product management', 'Payment gateway', 'Admin dashboard']
+        price: { type: 'starting-range', min: 19999, max: 34999 },
+        note: 'Domain & Hosting price not included',
+        features: ['Product Management (add/edit/delete)', 'Payment Gateway Integration', 'Cart & Checkout automation', 'Admin Dashboard']
       },
       {
         id: 'custom-web',
         name: 'Custom Website',
         price: { type: 'starting', amount: 29999 },
-        note: 'Domain price not included',
-        features: ['6 month support', '3D animation', 'SEO optimized', 'CMS integration']
+        note: 'Domain & Hosting price not included',
+        features: ['Fully Custom Design & Features', '6 Months Support', 'SEO Optimized', 'CMS Integration', 'Basic & Advanced Animations']
       },
       {
         id: 'basic-app',
         name: 'Basic App',
         price: { type: 'range', min: 15999, max: 34999 },
-        features: ['iOS & Android', 'Limited features', 'Required backend']
+        note: 'Application Stores price not included',
+        features: ['Android & (iOS optional)', 'Basic UI/UX', 'Limited Features', 'Basic Backend']
       },
       {
         id: 'advanced-app',
         name: 'Advanced App',
         price: { type: 'range', min: 39999, max: 49999 },
-        features: ['iOS & Android', 'Custom features', 'Solid backend']
+        note: 'Application Stores price not included',
+        features: ['Android & iOS', 'Custom Features', 'Strong Frontend/Backend System', 'Admin Panel']
       }
     ]
   },
@@ -225,7 +243,7 @@ export const serviceCategories: ServiceCategory[] = [
       {
         id: 'cinematic-reel',
         name: 'Cinematic Reels',
-        price: { type: 'fixed', amount: 1999 },
+        price: { type: 'range', min: 1299, max: 2499 },
         features: ['Cinematic shots', 'Professional color', 'Story-driven']
       },
       {
@@ -237,7 +255,7 @@ export const serviceCategories: ServiceCategory[] = [
       {
         id: 'youtube-package',
         name: 'YouTube Package',
-        price: { type: 'fixed', amount: 14999 },
+        price: { type: 'fixed', amount: 17999 },
         features: ['3 long videos', '10 shorts', 'Thumbnails included']
       }
     ]
@@ -282,7 +300,7 @@ export const serviceCategories: ServiceCategory[] = [
       {
         id: 'insta-3month',
         name: '3-Month Instagram Management',
-        price: { type: 'fixed', amount: 44999 },
+        price: { type: 'fixed', amount: 39999 },
         note: '90 Days contract • Save ₹14,000',
         popular: true,
         features: [
@@ -308,7 +326,7 @@ export const serviceCategories: ServiceCategory[] = [
       {
         id: 'short-edit',
         name: 'Short Video Editing (30s-1min)',
-        price: { type: 'fixed', amount: 999 },
+        price: { type: 'fixed', amount: 799 },
         features: ['Quick turnaround', 'Professional cuts', 'Music & effects']
       },
       {
@@ -316,6 +334,99 @@ export const serviceCategories: ServiceCategory[] = [
         name: 'Long Video Editing (10-20 min)',
         price: { type: 'range', min: 1499, max: 2499 },
         features: ['Detailed editing', 'Color correction', 'Audio enhancement']
+      }
+    ]
+  },
+  
+  
+  {
+    id: 'maintenance',
+    icon: Settings,
+    title: 'Maintenance & Support',
+    description: 'Keep your website or app running smoothly with ongoing support plans',
+    color: `linear-gradient(to bottom right, var(--primary-dark), var(--secondary-dark))`,
+    services: [
+      {
+        id: 'basic-maintenance',
+        name: 'Basic Maintenance',
+        price: { type: 'range', min: 999, max: 1999 },
+        note: 'Usually applicable after 5 months',
+        features: ['Monitoring', 'Basic Updates', 'Monthly Backup', 'Security Check']
+      },
+      {
+        id: 'standard-maintenance',
+        name: 'Standard Maintenance',
+        price: { type: 'range', min: 2499, max: 4999 },
+        note: 'Usually applicable after 5 months',
+        features: ['Weekly Backup', 'Speed Optimization', 'Updates', 'Minor Bug Fixes']
+      },
+      {
+        id: 'premium-maintenance',
+        name: 'Premium Maintenance',
+        price: { type: 'range', min: 5999, max: 9999 },
+        note: 'Usually applicable after 5 months',
+        features: ['Priority Support', 'Advanced Security', 'Performance Optimization', 'Reports']
+      }
+    ]
+  },
+  {
+    id: 'edits',
+    icon: Wrench,
+    title: 'Website / App Edit Charges',
+    description: 'Make changes to your existing website or app at affordable rates',
+    color: `linear-gradient(to bottom right, var(--secondary), var(--secondary-lightest))`,
+    services: [
+      {
+        id: 'small-changes',
+        name: 'Small Changes',
+        price: { type: 'range', min: 199, max: 499 },
+        features: ['Text Change', 'Image Update', 'Color Change']
+      },
+      {
+        id: 'medium-changes',
+        name: 'Medium Changes',
+        price: { type: 'range', min: 500, max: 1999 },
+        features: ['Section Add', 'Form Update', 'UI Changes']
+      },
+      {
+        id: 'major-changes',
+        name: 'Major Changes',
+        price: { type: 'range', min: 2000, max: 10000 },
+        features: ['New Page', 'Feature Add', 'Redesign']
+      }
+    ]
+  },
+  {
+    id: 'bug-fixing',
+    icon: Bug,
+    title: 'Bug Fixing Charges',
+    description: 'Fast and reliable bug fixes to keep your digital products error-free',
+    color: `linear-gradient(to bottom right, var(--secondary-dark), var(--secondary-darkest))`,
+    services: [
+      {
+        id: 'warranty-fix',
+        name: 'Warranty Period',
+        price: { type: 'fixed', amount: 0 },
+        note: '7–15 Days after delivery',
+        features: ['Fix for Development Errors Only']
+      },
+      {
+        id: 'minor-bug',
+        name: 'Minor Bug Fix',
+        price: { type: 'range', min: 499, max: 1499 },
+        features: ['UI Issues', 'Button Fix']
+      },
+      {
+        id: 'medium-bug',
+        name: 'Medium Bug Fix',
+        price: { type: 'range', min: 1500, max: 4999 },
+        features: ['Form/API Issues']
+      },
+      {
+        id: 'major-bug',
+        name: 'Major Bug Fix',
+        price: { type: 'range', min: 5000, max: 15000 },
+        features: ['Crash Fix', 'Payment Issues', 'Backend Errors']
       }
     ]
   }
@@ -331,6 +442,8 @@ export function getBookingDisplayPrice(price: ServicePrice): number {
       return getMidpointPrice(price.min, price.max)
     case 'starting':
       return price.amount
+    case 'starting-range':
+      return price.min
   }
 }
 
@@ -339,6 +452,9 @@ export function getBookingPriceNote(price: ServicePrice): string | null {
   if (price.type === 'range') {
     return `This rate is only initial and includes the estimated range (₹${price.min.toLocaleString()} – ₹${price.max.toLocaleString()})`
   }
+  if (price.type === 'starting-range') {
+    return `Starting price — final cost within range (₹${price.min.toLocaleString()} – ₹${price.max.toLocaleString()})`
+  }
   return null
 }
 
@@ -346,11 +462,14 @@ export function getBookingPriceNote(price: ServicePrice): string | null {
 export function getServicePagePriceDisplay(price: ServicePrice): string {
   switch (price.type) {
     case 'fixed':
+      if (price.amount === 0) return 'Free'
       return `₹${price.amount.toLocaleString()}${price.suffix ? price.suffix : '/-'}`
     case 'range':
       return `₹${price.min.toLocaleString()} – ₹${price.max.toLocaleString()}/-`
     case 'starting':
       return `Starting ₹${price.amount.toLocaleString()}`
+    case 'starting-range':
+      return `Starting ₹${price.min.toLocaleString()} – ₹${price.max.toLocaleString()}/-`
   }
 }
 

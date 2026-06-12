@@ -51,9 +51,9 @@ const values = [
 const team = [
   {
     name: 'Chetan Gaur',
-    role: 'Founder & Developer',
+    role: 'CEO & Founder',
     image: '/team/1.jpg',
-    bio: ' Founder & Developer at Techie Thrives, building scalable digital solutions and empowering businesses through technology and innovation.',
+    bio: ' Building Techie Thrives through innovation, client success, and technology-driven solutions while leading growth and execution.',
     social: {
       linkedin: 'https://www.linkedin.com/in/chetan-gaur-156089366?trk=contact-info',
       instagram: 'https://www.instagram.com/im_chetan_578?igsh=MXhncmJjbWZxbnZuNQ%3D%3D&utm_source=qr',
@@ -62,27 +62,52 @@ const team = [
     }
   },
   {
-    name: 'Anurag Agarwal',
-    role: 'Managing director',
-    image: '/team/3.jpg',
-    bio: 'Managing Director at Techie Thrives, overseeing strategy, operations, and creative direction to build strong digital brand presence.',
+    name: 'Kanishak Gautum',
+    role: 'Content Production Lead',
+    image: '/team/5.png',
+    bio: 'Creating engaging content, editing impactful videos, and transforming creative ideas into audience-focused digital experiences.',
     social: {
-      linkedin: 'https://www.linkedin.com/in/anurag-agarwal-57b62838a?utm_source=share_via&utm_content=profile&utm_medium=member_android',
-      instagram: 'https://www.instagram.com/anurag_15267?igsh=MnJhNnBueHcyZmlp',
-      phonecall: '6377973977',
-      email: 'anuragagarwal15267@gmail.com'
+      linkedin: ' ',
+      instagram: 'https://www.instagram.com/kanishak__gautam?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
+      phonecall: '7891530127',
+      email: 'gautamkanishak79@gmail.com'
     }
   },
   {
     name: 'Priyanshu Rathor',
-    role: 'Early Supporter & Investor',
+    role: 'Associate Contributor',
     image: '/team/2.jpg',
-    bio: 'Supported the early phase of Techie Thrives and contributed to initial ideas and direction.',
+    bio: 'Supporting projects with ideas, collaboration, and valuable contributions while helping strengthen Techie Thrives initiatives.',
     social: {
       linkedin: 'https://www.linkedin.com/in/priyanshu-rathor-792535312?utm_source=share_via&utm_content=profile&utm_medium=member_ios ',
       instagram: 'https://www.instagram.com/_pr1yanshu_?igsh=emJveHM5aGVmZnpn&utm_source=qr',
       phonecall: '7413078090',
       email: 'priyanshurathor612@gmail.com'
+    }
+  },
+ 
+  {
+    name: 'Anurag Agarwal',
+    role: 'Early Supporter',
+    image: '/team/3.jpg',
+    bio: 'Contributed to the foundation of Techie Thrives through early support, guidance, and participation during its beginnings.',
+    social: {
+      linkedin: '..',
+      instagram: 'https://www.instagram.com/anurag_15267?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
+      phonecall: '6377973977',
+      email: 'anuragagarwal15267@gmail.com'
+    }
+  },
+  {
+    name: 'Ankit meena',
+    role: 'Support Associate',
+    image: '/team/4.png',
+    bio: 'Providing dependable support, assisting with operational tasks, and contributing whenever needed to help company progress.',
+    social: {
+      linkedin: '..',
+      instagram: 'https://www.instagram.com/its_ankit.x?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
+      phonecall: '8769706816',
+      email: '..'
     }
   }
 ]
@@ -272,7 +297,7 @@ export default function AboutPage() {
                 onMouseLeave={(e) => e.currentTarget.style.borderColor = '#2a2a2a'}
                 >
                   {/* Image section */}
-                  <div className="relative h-80" style={{
+                  <div className="relative h-100" style={{
                     background: 'linear-gradient(to bottom right, rgba(0, 43, 39, 0.2), rgba(185, 128, 37, 0.2))'
                   }}>
                     <Image
@@ -410,7 +435,7 @@ export default function AboutPage() {
                     Start Your Project
                   </button>
                 </Link>
-                <Link href="/portfolio">
+                <Link href="...">
                   <button className="px-8 py-4 border-2 rounded-full font-semibold text-lg transition-all" style={{
                     borderColor: 'var(--secondary)',
                     background: 'transparent'
