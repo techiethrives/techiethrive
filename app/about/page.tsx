@@ -64,7 +64,7 @@ const team = [
   {
     name: 'Kanishak Gautum',
     role: 'Content Production Lead',
-    image: '/team/5.png',
+    image: '/team/5.PNG',
     bio: 'Creating engaging content, editing impactful videos, and transforming creative ideas into audience-focused digital experiences.',
     social: {
       linkedin: ' ',
